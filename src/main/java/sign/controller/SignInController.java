@@ -50,7 +50,7 @@ public class SignInController {
 				
 		PlusOperations plusOperations = google.plusOperations();
 		Person person = plusOperations.getGoogleProfile();
-		
+		System.out.println(person.getPlacesLived());
 		
 		session.setAttribute("accessToken", accessToken);
 		//mav.addObject("name", person.getGivenName());

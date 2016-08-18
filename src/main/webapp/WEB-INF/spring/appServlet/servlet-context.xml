@@ -38,7 +38,7 @@
 	</beans:bean>
 
 	<beans:bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
-		<beans:property name="scope" value="https://www.googleapis.com/auth/plus.login" />
+		<beans:property name="scope" value="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar" />
 		<!-- <beans:property name="scope" value="https://www.googleapis.com/auth/plus.me"/> -->
 		<!-- <beans:property name="redirectUri" value="http://localhost:8080/oauth2callback" /> -->
 		<beans:property name="redirectUri" value="http://localhost:9090/mybatis/sign/signIn" />

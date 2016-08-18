@@ -57,6 +57,7 @@ button {
 					<button class="header_btn">calender</button>
 					<button class="header_btn">map</button>
 					<button class="header_btn">signOut</button>
+					<h3>accessToken : ${accessToken }</h3>
 				</div>
 			</div>
 		</c:when>
