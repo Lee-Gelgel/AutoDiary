@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+ * {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+#header {
+	margin-bottom: -75px;
+}
+
+#wrap {
+	min-height: 100%;
+}
+
+#content {
+	padding-top: 75px;
+	padding-bottom: 50px;
+}
+
+#footer {
+	margin-top: -50px;
+}
