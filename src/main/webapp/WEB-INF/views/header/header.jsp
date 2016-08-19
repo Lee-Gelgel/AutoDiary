@@ -27,7 +27,7 @@ button {
 }
 
 #map_toggle, #cal_toggle {
-	display: none;
+/* 	display: none; */
 }
 </style>
 <script>
