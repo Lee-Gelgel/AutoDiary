@@ -6,8 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Header</title>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/jquery/jquery-3.1.0.min.js"></script>
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.1.0.min.js"></script> --%>
 <style>
 #Header_outside {
 	background-color: skyblue;
@@ -28,7 +27,7 @@ button {
 }
 
 #map_toggle, #cal_toggle {
-	display: none;
+/* 	display: none; */
 }
 </style>
 <script>
@@ -57,6 +56,7 @@ button {
 					<button class="header_btn">calender</button>
 					<button class="header_btn">map</button>
 					<button class="header_btn">signOut</button>
+					<%-- <h3>accessToken : ${accessToken }</h3> --%>
 				</div>
 			</div>
 		</c:when>

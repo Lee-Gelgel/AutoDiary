@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/css/init.css"
-	rel="stylesheet" />
-<link
-	href="${pageContext.request.contextPath }/css/calendar/fullcalendar.css"
-	rel="stylesheet" />
-<link
-	href="${pageContext.request.contextPath }/css/calendar/fullcalendar.print.css"
-	rel="stylesheet" media="print" />
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/jquery/calendar/moment.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/jquery/calendar/jquery.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/jquery/calendar/fullcalendar.js"></script>
+
+<style type="text/css">
+    #calendar {
+        max-width : 900px;
+        margin : 0 auto;
+    }
+</style>
+
+
+<link href="${pageContext.request.contextPath }/css/calendar/fullcalendar.css" rel="stylesheet"/>
+<link href="${pageContext.request.contextPath }/css/calendar/fullcalendar.print.css" rel="stylesheet" media="print"/>
+<script type="text/javascript" src="${pageContext.request.contextPath }/jquery/calendar/moment.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/jquery/calendar/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/jquery/calendar/fullcalendar.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	/* $('#calendar').fullCalendar({
@@ -45,9 +45,9 @@ $(document).ready(function() {
 
 		    },
 		header: {
-			left: 'prev,next',
+			left: 'prev,next today',
 			center: 'title',
-			right: 'today'
+			right: 'month,agendaWeek,agendaDay'
 			/* right: 'month,agendaWeek,agendaDay' */
 		},
 		defaultDate: '2016-06-12',
@@ -127,45 +127,9 @@ $(document).ready(function() {
 	
 });
 </script>
-
-<style>
-	#calendar{
-		width: 70%;
-		margin : auto;
-	}
-</style>
-
 </head>
 <body>
-	<div id="header">
-		<jsp:include page="/WEB-INF/views/header/header.jsp" />
-	</div>
-
-	<div id="wrap">
-		<div id="content">
-			<h1>Main Page</h1>
-			<div id="calender">
-				<h2>google calender</h2>
-				<div id="cal_toggle">
-					<%-- <img src="${pageContext.request.contextPath }/images/googlecal.png"> --%>
-					<!--  <div id="calendar"></div> -->
-					<div id="calendar"></div>
-				</div>
-			</div>
-			<div id="map">
-				<h2>google map</h2>
-				<div id="map_toggle">
-					<img
-						src="${pageContext.request.contextPath }/images/googlemap.jpeg">
-				</div>
-
-			</div>
-			<%-- <a href="${pageContext.request.contextPath }/calendar/calendar">Calendar</a> --%>
-		</div>
-	</div>
-	<div id="footer">
-		<jsp:include page="/WEB-INF/views/footer/footer.jsp" />
-	</div>
-
+calendar
+<div id="calendar"></div>
 </body>
 </html>

@@ -29,7 +29,7 @@
 	</beans:bean>
 
 	<context:component-scan
-		base-package="spring.mvc.mybatis, intro, main, calender, client, diary, map, sign" />
+		base-package="spring.mvc.mybatis, intro, main, calendar, client, diary, map, sign" />
 
 	<beans:bean id="googleConnectionFactory"
 		class="org.springframework.social.google.connect.GoogleConnectionFactory">
@@ -38,7 +38,11 @@
 	</beans:bean>
 
 	<beans:bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
-		<beans:property name="scope" value="https://www.googleapis.com/auth/plus.login" />
+		<beans:property name="scope" value="https://www.googleapis.com/auth/plus.login 
+		https://www.googleapis.com/auth/calendar 
+		https://www.googleapis.com/auth/mapsengine 
+		https://www.googleapis.com/auth/glass.timeline
+		https://www.googleapis.com/auth/glass.location" />
 		<!-- <beans:property name="scope" value="https://www.googleapis.com/auth/plus.me"/> -->
 		<!-- <beans:property name="redirectUri" value="http://localhost:8080/oauth2callback" /> -->
 		<beans:property name="redirectUri" value="http://localhost:9090/mybatis/sign/signIn" />
