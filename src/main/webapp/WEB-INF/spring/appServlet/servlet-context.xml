@@ -33,20 +33,43 @@
 
 	<beans:bean id="googleConnectionFactory"
 		class="org.springframework.social.google.connect.GoogleConnectionFactory">
-		<beans:constructor-arg value="460522107255-rg6gr715a2hde5fv9vtb8dlgfcs6qqmd.apps.googleusercontent.com" />
+		<beans:constructor-arg
+			value="460522107255-rg6gr715a2hde5fv9vtb8dlgfcs6qqmd.apps.googleusercontent.com" />
 		<beans:constructor-arg value="QsSoOQ46WfBWAE3KRaX4vv3l" />
 	</beans:bean>
 
-	<beans:bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
-		<beans:property name="scope" value="https://www.googleapis.com/auth/plus.login 
+	<beans:bean id="googleOAuth2Parameters"
+		class="org.springframework.social.oauth2.OAuth2Parameters">
+		<beans:property name="scope"
+			value="https://www.googleapis.com/auth/plus.login 
 		https://www.googleapis.com/auth/calendar 
 		https://www.googleapis.com/auth/mapsengine 
 		https://www.googleapis.com/auth/glass.timeline
 		https://www.googleapis.com/auth/glass.location" />
 		<!-- <beans:property name="scope" value="https://www.googleapis.com/auth/plus.me"/> -->
-		<!-- <beans:property name="redirectUri" value="http://localhost:8080/oauth2callback" /> -->
-		<beans:property name="redirectUri" value="http://localhost:9090/mybatis/sign/signIn" />
+		<!-- <beans:property name="redirectUri" value="http://localhost:8080/oauth2callback" 
+			/> -->
+		<beans:property name="redirectUri"
+			value="http://localhost:9090/mybatis/sign/signIn" />
 	</beans:bean>
-	
+
+<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+  <beans:property name="url" value="jdbc:oracle:thin:@10.211.55.3:1521:xe"/>
+  <beans:property name="username" value="hr"/>
+  <beans:property name="password" value="hr"/>
+</beans:bean>
+
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="mapperLocations" value="classpath*:mappers/*Mapper.xml" />
+	</beans:bean>
+
+	<!-- Spring이 제공하는 MyBatis연동을 위한 sqlSessionTemplate빈 설정 -->
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0" ref="sqlSessionFactory" />
+	</beans:bean>
+
+
 
 </beans:beans>

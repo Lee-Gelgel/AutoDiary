@@ -52,6 +52,9 @@ public class SignInController {
 		Person person = plusOperations.getGoogleProfile();
 		/*System.out.println(person.getPlacesLived());*/
 		
+		System.out.println(person.getDisplayName());
+		System.out.println(person.getId());
+		
 		session.setAttribute("accessToken", accessToken);
 		//mav.addObject("name", person.getGivenName());
 		//mav.addObject("access_token", accessToken);
